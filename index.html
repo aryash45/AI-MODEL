@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Meet MAX, your virtual assistant. Interact through voice commands and experience a futuristic AI interface.">
+    <title>Max - My Assistant</title>
+    <link rel="shortcut icon" href="logo.jpg" type="image/jpeg">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main class="container" role="main">
+        <div class="assistant-wrapper">
+            <div class="glowing-circle" role="presentation">
+                <img src="logo.jpg" alt="MAX Assistant Logo" id="logo">
+            </div>
+            <h1 class="typing-effect">I'M <span id="name">MAX</span>, YOUR <span id="va">VIRTUAL ASSISTANT</span></h1>
+            
+            <div class="voice-animation" role="presentation">
+                <img src="voice.gif" alt="Voice wave animation" id="voice">
+            </div>
+            
+            <button id="btn" class="pulse-button" aria-label="Start voice interaction with MAX">
+                <div class="button-content">
+                    <img src="mic-02-stroke-rounded.svg" alt="Microphone icon" role="img">
+                    <span id="content">SPEAK WITH ME</span>
+                </div>
+                <div class="ripple" aria-hidden="true"></div>
+            </button>
+        </div>
+    </main>
+    <div id="particles-js" class="particles"></div>
+    
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Protest+Guerrilla&display=swap');
+*{
+margin:0;
+padding: 0;
+box-sizing: border-box ;
+
+}
+body{
+    width:100%;
+    min-height: 100vh;
+    background-color: #0a0a0a;
+    color: #fff;
+    overflow-x: hidden;
+
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+.assistant-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    gap: 30px;
+    padding: 20px;
+
+}
+.glowing-circle{
+    position: relative;
+    width: 20vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    animation: glow 3s infinite alternate;
+}
+#logo{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+
+}
+h1{
+    color: #00fff2;
+    font-family: "Orbitron",sans-serif;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0,255,242,0.5);
+    animation: fadeIn 1s ease-in;
+}
+#name{
+    color: #ff2e63;
+    font-size: 45px;
+    text-shadow: 0 0 10px rgba(255,46,99,0.5);
+}
+#va{
+    color: #fff;
+    font-size: 45px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.5);
+     
+}
+.voice-animation{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#voice{
+    width: 100px;
+    height: 100px;
+    display: none;
+
+
+}
+.pulse-button{
+    width: 300px;
+    background: linear-gradient(45deg, #2e3bcb, #b61c1c);
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 20px;
+    border-radius: 30px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
+}
+.pulse-button:hover,
+.pulse-button:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(237, 19, 229, 0.5);
+}
+.pulse-button:focus {
+    box-shadow: 0 0 30px rgba(237, 19, 229, 0.5), 0 0 0 3px #fff;
+}
+.button-content{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1;
+}
+.ripple{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    transform: scale(0);
+    animation: ripple 1s linear infinite;
+}
+.particles{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 20px #00fff2,
+                    0 0 40px #00fff2;
+    }
+    100% {
+        box-shadow: 0 0 40px #ff2e63,
+                    0 0 80px #ff2e63;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glowing-circle {
+        width: 40vw;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    #name, #va {
+        font-size: 32px;
+    }
+    
+    .pulse-button {
+        width: 80%;
+        font-size: 16px;
+    }
+}
+
+/* Add reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    .pulse-button,
+    .ripple,
+    .glowing-circle,
+    h1 {
+        animation: none;
+        transition: none;
+    }
+}
+
+/* Additional breakpoint for smaller devices */
+@media (max-width: 480px) {
+    .glowing-circle {
+        width: 60vw;
+    }
+    
+    h1 {
+        font-size: 20px;
+    }
+    
+    #name, #va {
+        font-size: 28px;
+    }
+}
+
+
+
+
